@@ -26,7 +26,7 @@ module instruction_memory(Address, Instruction);
 
     output   [31:0]  Instruction;    // Instruction at memory location Address
     
-    reg [31:0] mem[0:1024];
+    reg [31:0] mem[0:1023];
 
 
     
@@ -34,7 +34,7 @@ module instruction_memory(Address, Instruction);
 
 	initial
 	begin
-		$readmemh("code.txt",mem);
+		$readmemh("instruction.txt",mem);
 	end
 
 	assign Instruction = mem[Address];	
