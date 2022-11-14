@@ -1,9 +1,10 @@
+`timescale 1ns / 1ps
 module tb(
 
     );
     reg [15:0] in;
     wire [31:0] out;
-    sign_extension dut(.in(in),.out(out));
+    sign_extend dut(.in(in),.out(out));
     initial
     begin
     #5 in=16'b1111111111111111;
@@ -13,6 +14,6 @@ module tb(
     end
     initial
     begin
-    $display($time,"in=%b,out=%b",in,out);
+    $monitor($time,"in=%b,out=%b",in,out);
     end
 endmodule
